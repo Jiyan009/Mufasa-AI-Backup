@@ -1,9 +1,14 @@
 [project]
 name = "repl-nix-workspace"
 version = "0.1.0"
-description = "Add your description here"
+description = "A simple Streamlit app using requests"
 requires-python = ">=3.11"
+
 dependencies = [
     "requests>=2.32.4",
-    "streamlit>=1.47.0",
+    "streamlit>=1.47.0"
 ]
+
+[tool.poetry]
+# Tell Poetry to skip packaging this project
+package-mode = false

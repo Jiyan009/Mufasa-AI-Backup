@@ -1,6 +1,1 @@
-# System packages for Streamlit Cloud deployment
-# Add any required system-level dependencies below
-
-# Example of a real package (uncomment only if needed)
-# ffmpeg
-# libgl1
+# No system packages required

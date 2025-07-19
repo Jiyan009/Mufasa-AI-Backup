@@ -1,0 +1,2 @@
+env:
+  SARVAM_API_KEY: ${{ secrets.SARVAM_API_KEY }}

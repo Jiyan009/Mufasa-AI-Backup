@@ -9,7 +9,7 @@ from language_support import LanguageSupport
 # Page configuration
 st.set_page_config(
     page_title="Mufasa AI - Your Wise AI Companion",
-    page_icon="ðŸ¦",
+    page_icon="🦁",
     layout="wide",
     initial_sidebar_state="collapsed"
 )
@@ -532,10 +532,10 @@ def main():
     # Apply theme
     if st.session_state.dark_mode:
         st.markdown(apply_dark_theme(), unsafe_allow_html=True)
-        theme_icon = "â˜€ï¸"
+        theme_icon = "☀️"
     else:
         st.markdown(apply_light_theme(), unsafe_allow_html=True)
-        theme_icon = "ðŸŒ™"
+        theme_icon = "🌙"
     
     # Theme toggle button
     theme_button_html = f"""
@@ -554,7 +554,7 @@ def main():
     st.markdown('<div class="chat-container">', unsafe_allow_html=True)
     
     # Header
-    st.title("ðŸ¦ Mufasa AI")
+    st.title("🦁 Mufasa AI")
     st.markdown("**Your wise AI companion powered by Sarvam AI - Ask Mufasa anything!**")
     
     # Language selection in header
@@ -568,7 +568,7 @@ def main():
                 break
         
         selected_display = st.selectbox(
-            "ðŸŒ Language",
+            "🌐 Language",
             options=list(language_options.keys()),
             index=list(language_options.keys()).index(current_lang_display) if current_lang_display else 0,
             key="language_selector"
@@ -582,7 +582,7 @@ def main():
     
     with col3:
         st.session_state.auto_translate = st.checkbox(
-            "ðŸ”„ Auto-translate",
+            "🔄 Auto-translate",
             value=st.session_state.auto_translate,
             help="Automatically translate responses to your selected language"
         )
@@ -671,14 +671,14 @@ def main():
                     
                 else:
                     # Handle API error
-                    error_msg = f"âŒ Error: {response.get('error', 'Unknown error occurred')}"
+                    error_msg = f"❌ Error: {response.get('error', 'Unknown error occurred')}"
                     message_placeholder.markdown(f'<div class="error-message">{error_msg}</div>', unsafe_allow_html=True)
                     
                     st.session_state.tiger_state = "sad"
                     
             except Exception as e:
                 # Handle unexpected errors
-                error_msg = f"âŒ Unexpected error: {str(e)}"
+                error_msg = f"❌ Unexpected error: {str(e)}"
                 message_placeholder.markdown(f'<div class="error-message">{error_msg}</div>', unsafe_allow_html=True)
                 
                 st.session_state.tiger_state = "confused"
@@ -688,14 +688,14 @@ def main():
     
     # Sidebar with information
     with st.sidebar:
-        st.markdown("### ðŸ¦ Mufasa - Your AI Companion")
-        st.markdown("Mufasa is your wise AI assistant created by **Jeet Borah** (Jeet Bhai), always ready to help with guidance and knowledge.")
+        st.markdown("### 🦁 Mufasa - Your AI Companion")
+        st.markdown("Mufasa is your wise AI assistant, always ready to help with guidance and knowledge.")
         
         # Show welcome message in selected language
         welcome_msg = language_support.get_welcome_message(st.session_state.selected_language)
         st.info(welcome_msg)
         
-        st.markdown("### ðŸŒ Language Features")
+        st.markdown("### 🌐 Language Features")
         current_lang = language_support.get_language_name(st.session_state.selected_language)
         st.markdown(f"**Current Language:** {current_lang}")
         st.markdown("- **11 Indian Languages** supported")
@@ -703,7 +703,7 @@ def main():
         st.markdown("- **Language detection** from your input")
         st.markdown("- **Native script** support")
         
-        st.markdown("### ðŸ… Tiger Mascot States")
+        st.markdown("### 🐅 Tiger Mascot States")
         st.markdown("- **Idle**: Waiting for your message")
         st.markdown("- **Thinking**: Processing your request")
         st.markdown("- **Happy**: Successfully responded")
@@ -711,7 +711,7 @@ def main():
         st.markdown("- **Sad**: Error occurred")
         st.markdown("- **Confused**: Unexpected error")
         
-        st.markdown("### ðŸ’¡ Tips")
+        st.markdown("### 💡 Tips")
         st.markdown("- Use the theme toggle in the top right")
         st.markdown("- Switch languages anytime using the dropdown")
         st.markdown("- Enable auto-translate for multilingual responses")
@@ -719,7 +719,7 @@ def main():
         st.markdown("- Tiger reacts to every response")
         
         # Clear chat button
-        if st.button("ðŸ—‘ï¸ Clear Chat History"):
+        if st.button("🗑️ Clear Chat History"):
             st.session_state.messages = []
             st.session_state.tiger_state = "idle"
             st.rerun()
@@ -727,9 +727,9 @@ def main():
         # API status
         api_key = os.getenv("SARVAM_API_KEY", "default_api_key")
         if api_key == "default_api_key":
-            st.warning("âš ï¸ Using default API key. Set SARVAM_API_KEY environment variable for full functionality.")
+            st.warning("⚠️ Using default API key. Set SARVAM_API_KEY environment variable for full functionality.")
         else:
-            st.success("âœ… API key configured")
+            st.success("✅ API key configured")
     
     st.markdown('</div>', unsafe_allow_html=True)
 

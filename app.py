@@ -687,9 +687,11 @@ def main():
         st.rerun()
     
     # Sidebar with information
+    # Sidebar with information
     with st.sidebar:
         st.markdown("### 🦁 Mufasa - Your AI Companion")
-        st.markdown("Mufasa is your wise AI assistant, always ready to help with guidance and knowledge.")
+        st.markdown("Mufasa is your wise AI assistant created by **Jeet Borah** (Jeet Bhai), always ready to help with guidance and knowledge.")
+    
         
         # Show welcome message in selected language
         welcome_msg = language_support.get_welcome_message(st.session_state.selected_language)

@@ -56,7 +56,7 @@ def apply_light_theme():
     """Light theme styling"""
     return """
     <style>
-    .stApp { background-color: #121212; color: #e0e0e0; }
+    .stApp { background-color: #0e1117; color: #ffffff; }
     /* Add your light theme styles here */
     </style>
     """
